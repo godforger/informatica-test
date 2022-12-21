@@ -1,0 +1,39 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  display: flex
+  justify-content: flex-end
+  width: 100%
+  padding-right: 10%
+  padding-left: 10%
+  margin: 0 auto
+  padding-top: 20px
+  @media all and (min-width: 892px)
+    justify-content: space-between
+    .header-left, .header-center
+      display: flex
+  &-left
+    display: none
+  &-center
+    display: none
+    justify-content: space-between
+    width: 50%
+  &-right
+    display: flex
+    justify-content: space-between
+    gap: 40px
+  .login
+    display: flex
+    gap: 3px
+
+  .icon
+    display: block
+    &-login
+      background: center / contain no-repeat url(/login.png)
+      height: 24px
+      width: 24px
+    &-menu
+      background: center / contain no-repeat url(/menu.png)
+      height: 24px
+      width: 24px

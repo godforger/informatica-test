@@ -1,0 +1,17 @@
+#app
+  width: 100vw
+  height: 100vh
+  background-color: #020923
+  position: relative
+  overflow: hidden
+  &:before
+    content: ''
+    position: absolute
+    pointer-events: none
+    background-color: rgba(255, 255, 255, 0.2)
+    width: var(--r)
+    height: var(--r)
+    left: calc(50% - (var(--r) / 2))
+    top: calc(50% - (var(--r) / 2))
+    border-radius: 50%
+    box-shadow: 0 0 100vw 50vh rgba(255, 255, 255, 0.2)

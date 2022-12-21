@@ -1,0 +1,60 @@
+.competitor
+  --h: 74px
+  --triangle: 161px
+  --wFactor: -11px
+  &-item
+    position: absolute
+    background-color: #fff
+    height: var(--h)
+    width: calc(50% - 117px - var(--wFactor) * 2.5)
+    color: #020923
+    display: flex
+    align-items: center
+    transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) var(--time)
+    font-weight: bolder
+    font-size: 18px
+    @media all and (min-width: 768px)
+      --wFactor: 6px
+      --h: 104px
+      --triangle: 226px
+    .icon
+      position: absolute
+      top: 0
+      width: var(--triangle)
+      z-index: -1
+      pointer-events: none
+      svg
+        width: 100%
+        height: auto
+        fill: white
+  &--active
+    .competitor
+      &-item
+        transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) calc(var(--time) / 2)
+      &--left
+        transform: translateX(0)
+      &--right
+        transform: translateX(0)
+  &--left
+    left: 0
+    text-align: right
+    justify-content: end
+    top: calc(50% + 20px - var(--h))
+    transform: translateX(calc(-100% - var(--triangle)))
+    .icon
+      right: 0
+      svg
+        transform: translateX(calc(100% - 2px))
+  &--right
+    right: 0
+    justify-content: start
+    top: calc(50% + 20px)
+    transform: translateX(calc(100% + var(--triangle)))
+    .icon
+      left: 0
+      svg
+        transform: translateX(-41px)
+        @media all and (min-width: 768px)
+          transform: translateX(-57px)
+
+
